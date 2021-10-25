@@ -22,14 +22,14 @@ class AdminDash extends React.Component {
   };
   renderRedirect() {
     if (this.state.redirectToViewer) {
-      return <Redirect to="/applicant-viewer" />;
+      return <Redirect to="/user-manager" />;
     }
   }
   render() {
     return (
       <Container>
         {this.renderRedirect()}
-        <Route path="/applicant-viewer" component={ApplicantViewer} />
+        {/* <Route path="/applicant-viewer" component={ApplicantViewer} /> */}
         <Route path="/user-manager" component={UserManager} />
         <Route path="/events" component={EventManager} />
       </Container>

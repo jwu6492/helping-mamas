@@ -23,8 +23,8 @@ import avatar from '../images/test.jpg';
 
 const pageSwitchWidth = currPath => {
   switch (currPath) {
-    case '/applicant-viewer':
-      return '9.6rem';
+    // case '/applicant-viewer':
+    //   return '9.6rem';
     case '/user-manager':
       return '8.6rem';
     case '/events':
@@ -36,8 +36,8 @@ const pageSwitchWidth = currPath => {
 
 const pageSwitchLeft = currPath => {
   switch (currPath) {
-    case '/applicant-viewer':
-      return '-1rem';
+    // case '/applicant-viewer':
+    //   return '-1rem';
     case '/user-manager':
       return '8.3rem';
     case '/events':
@@ -179,7 +179,10 @@ class Header extends Component {
       <div>
         <Styled.Navbar light expand="md">
           <Container style={{ marginLeft: '0px', marginRight: '0px', maxWidth: '100%' }}>
-            <NavbarBrand tag={Link} to="/applicant-viewer">
+            {/* <NavbarBrand tag={Link} to="/applicant-viewer">
+              <img style={{ width: '175px' }} alt="bog logo" src={logo} />
+            </NavbarBrand> */}
+            <NavbarBrand>
               <img style={{ width: '175px' }} alt="bog logo" src={logo} />
             </NavbarBrand>
 
@@ -188,12 +191,12 @@ class Header extends Component {
               {loggedIn ? (
                 <Styled.FlexContainer className="navbar-nav">
                   <Styled.PageSwitch currPathName={location.pathname}>
-                    <Styled.PageLink
+                    {/* <Styled.PageLink
                       to="/applicant-viewer"
                       selected={this.currPageMatches('/applicant-viewer')}
                     >
                       Applicant Viewer
-                    </Styled.PageLink>
+                    </Styled.PageLink> */}
                     {role === 'admin' && (
                       <Styled.PageLink
                         to="/user-manager"

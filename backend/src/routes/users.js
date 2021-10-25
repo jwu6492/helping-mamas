@@ -47,6 +47,7 @@ router.post('/', USER_DATA_VALIDATOR, (req, res, next) => {
       return Promise.resolve();
     })
     .then(() => {
+      // res.redirect('/frontend/src/components/AdminDash/user/UserManager');
       res.status(200).json({ userData });
     })
     .catch(err => {

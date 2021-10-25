@@ -1,6 +1,7 @@
 // npm imports
 const passport = require('passport');
 const GoogleTokenStrategy = require('passport-google-token').Strategy;
+const express = require('express');
 
 // Local imports
 const UserCreds = require('./models/userCreds');
@@ -52,6 +53,7 @@ function initAuth(app) {
           error: 'User Not Authenticated'
         });
       }
+      //res.redirect('/frontend/src/components/AdminDash/user/UserManager');
       return res.status(200).send(JSON.stringify(req.user));
     }
   );
