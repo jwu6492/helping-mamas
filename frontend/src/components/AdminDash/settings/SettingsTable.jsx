@@ -6,6 +6,7 @@ import { Icon } from 'components/Shared';
 import styled from 'styled-components';
 import { Button } from 'reactstrap';
 import { bindActionCreators } from 'redux';
+import { getCurrentUser } from 'components/AdminDash/queries';
 
 const Styled = {
   Button: styled(Button)`
@@ -31,6 +32,7 @@ const SettingsTable = ({ user, loading }) => {
                 <td>{user.bio.first_name}</td>
                 <td>{user.bio.last_name}</td>
                 <td>{user.bio.phone_number}</td>
+                <td>Show file names</td >
               </Table.Row>
             }
         </tbody>

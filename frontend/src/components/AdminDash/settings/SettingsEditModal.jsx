@@ -7,6 +7,7 @@ import * as SForm from '../shared/formStyles';
 import PropTypes from 'prop-types';
 import { eventValidator } from './settingsHelper';
 import { updateUser } from 'components/AdminDash/queries';
+import { getCurrentUser } from 'components/AdminDash/queries';
 
 const Styled = {
   Form: styled(FForm)``,
@@ -22,6 +23,10 @@ const Styled = {
     display: inline-block;
   `
 };
+
+const handleChange = (event) => {
+
+}
 
 const SettingsEditModal = ({ open, toggle }) => {
 
@@ -61,6 +66,14 @@ const SettingsEditModal = ({ open, toggle }) => {
                   <Field name="phoneNumber">
                     {({ field }) => <SForm.Input {...field} type="text" />}
                   </Field>
+
+                  <SForm.Label>Waiver</SForm.Label>
+                  <Styled.ErrorMessage name="waivers" />
+                  <Field name="waivers" onChange={handleChange}>
+                    {({ field }) => <SForm.Input {...field} type="file" accept="image/*,.pdf" multiple />}
+                  </Field>
+                  
+
                 </SForm.FormGroup>
               </Styled.Form>
             </ModalBody>
