@@ -20,6 +20,7 @@ export async function getEvents(next) {
 
   await dbConnect();
 
+  
   return EventData.find({})
   .then((events) => {
     return events;
